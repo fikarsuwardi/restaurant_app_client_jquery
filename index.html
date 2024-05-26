@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Restaurant Fikar</title>
+    <style>
+      table table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      th,
+      td {
+        padding: 15px;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      /* NAVBAR */
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .hov a:hover {
+        background-color: #111;
+      }
+
+      .g-signin2 {
+        width: 100%;
+      }
+
+      .g-signin2 > div {
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <div>
+      <ul>
+        <li>
+          <a id="title"><b>Restaurant</b></a>
+        </li>
+        <div class="hov">
+          <li><a href="#" id="navListFood">List Food</a></li>
+          <li><a href="#" id="navListCategory">List Category</a></li>
+          <li><a href="#" id="navAddFood">Add Food</a></li>
+          <li style="float: right"><a href="#" id="navLogout">Log Out</a></li>
+          <li style="float: right">
+            <a href="#" id="navRegister">Register</a>
+          </li>
+          <li style="float: right"><a href="#" id="navLogin">Login</a></li>
+        </div>
+      </ul>
+    </div>
+
+    <!-- LIST FOOD -->
+    <hr />
+    <div>
+      <h1 style="text-align: center" id="teksListFood">List Food</h1>
+      <div style="display: flex; justify-content: center">
+        <table style="width: 80%" id="tableListFood">
+          <thead>
+            <tr>
+              <th>Food Name</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Image</th>
+              <th>Author</th>
+              <th>Category</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="tableDataFood">
+            <tr>
+              <td>Dummy Food Name</td>
+              <td>Dummy Description</td>
+              <td>Dummy Price</td>
+              <td>
+                <img src="" alt="" style="width: 50%" />
+              </td>
+              <td>Dummy Author</td>
+              <td>Dummy Category</td>
+              <td style="text-align: center" id="action">
+                <button><a href="" id="editButton">Edit</a></button>
+                <button><a href="" id="deleteButton">Delete</a></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- LIST CATEGORY -->
+    <div>
+      <h1 style="text-align: center" id="teksListCategory">List Category</h1>
+      <div style="display: flex; justify-content: center">
+        <table style="width: 80%" id="tableListCategory">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Name</th>
+              <th>Created At</th>
+              <th>Updated At</th>
+            </tr>
+          </thead>
+          <tbody id="tableDataCategory">
+            <tr>
+              <td>Dummy No</td>
+              <td>Dummy Category</td>
+              <td>Dummy Created At</td>
+              <td>Dummy Updated At</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- REGISTER -->
+    <h2 style="text-align: center" id="teksRegister">REGISTER</h2>
+
+    <div style="display: flex; justify-content: center">
+      <form action="" id="registerForm">
+        <label>Username:</label><br />
+        <input type="text" id="username" /><br /><br />
+        <label>Email:</label><br />
+        <input type="text" id="email" /><br /><br />
+        <label>Password:</label><br />
+        <input type="password" id="password" /><br /><br />
+        <label>Phone Number:</label><br />
+        <input type="text" id="phoneNumber" /><br /><br />
+        <label>Address</label><br />
+        <input type="text" id="address" /><br /><br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <br />
+
+    <!-- LOGIN -->
+    <h2 style="text-align: center" id="teksLogin">LOGIN</h2>
+
+    <div style="display: flex; justify-content: center">
+      <form action="" id="loginForm">
+        <label for="fname">Email</label><br />
+        <input type="email" id="email-login" name="email" /><br /><br />
+        <label for="lname">Password</label><br />
+        <input
+          type="password"
+          id="password-login"
+          name="password"
+        /><br /><br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <br />
+
+    <div style="display: flex; justify-content: center" id="oauth">
+      <!-- OAUTH -->
+      <div
+        id="buttonDiv"
+        data-client_id="YOUR_GOOGLE_CLIENT_ID"
+        data-login_uri="https://your.domain/your_login_endpoint"
+        data-auto_prompt="false"
+      ></div>
+      <div
+        class="g_id_signin"
+        data-type="icon"
+        data-shape="pill"
+        data-theme="filled_black"
+        data-text="signup_with"
+        data-size="large"
+        data-logo_alignment="left"
+        data-width="10"
+      >
+      </div>
+    </div>
+
+    <!-- ADD FOOD -->
+    <h2 style="text-align: center" id="teksAddFood">ADD FOOD</h2>
+
+    <div style="display: flex; justify-content: center">
+      <form action="" id="addFood">
+        <label>Food Name:</label><br />
+        <input type="text" id="name" /><br /><br />
+        <label>Description:</label><br />
+        <input type="text" id="description" /><br /><br />
+        <label>Price:</label><br />
+        <input type="number" id="price" /><br /><br />
+        <label>Image Url:</label><br />
+        <input type="text" id="imgUrl" /><br /><br />
+        <label>Category</label><br />
+        <select id="categoryId">
+          <option selected disabled>Choose...</option>
+          <!-- append category -->
+        </select>
+        <br />
+        <br />
+        <input type="submit" value="Add" id="addButton" />
+      </form>
+    </div>
+
+    <!-- EDIT FOOD -->
+    <h2 style="text-align: center" id="teksEditFood">EDIT FOOD</h2>
+
+    <div style="display: flex; justify-content: center">
+      <form action="" id="editFood">
+        <label>Food Name:</label><br />
+        <input type="text" id="name-edit" /><br /><br />
+        <label>Description:</label><br />
+        <input type="text" id="description-edit" /><br /><br />
+        <label>Price:</label><br />
+        <input type="number" id="price-edit" /><br /><br />
+        <label>Image Url:</label><br />
+        <input type="text" id="imgUrl-edit" /><br /><br />
+        <label>Category</label><br />
+        <select id="categoryId-edit">
+          <option selected disabled>Choose...</option>
+          <!-- append category -->
+        </select>
+        <br />
+        <br />
+        <input type="submit" value="Update" />
+      </form>
+    </div>
+
+    <!-- AJAX -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Document Ready -->
+    <script src="main.js"></script>
+    <!-- SWEET ALERT -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Google Login -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </body>
+</html>
